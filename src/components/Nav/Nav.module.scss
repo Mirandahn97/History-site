@@ -1,0 +1,20 @@
+@use '../../Style/globals.scss';
+
+.Navigation {
+    background-color: globals.$color_black;
+
+    ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        li {
+            list-style: none;
+
+            a {
+                text-decoration: none;
+                color: globals.$color_sand;
+            }
+        }
+    }
+}

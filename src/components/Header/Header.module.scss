@@ -1,0 +1,20 @@
+@use '../../Style/globals.scss';
+
+.old_pictur {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    z-index: -1;
+
+}
+
+.heading {
+    background-color: globals.$color_darkgrey;
+    border: 5px solid globals.$color_darkgreen;
+    font-family: "Limelight", sans-serif;
+    color: white;
+    z-index: 2;
+    position: relative;
+    
+
+}

@@ -4,4 +4,38 @@
     font-family: "Limelight", sans-serif;
     font-weight: 400;
     color: globals.$color_sand;
+    text-align: center;
+
+    
+}
+
+.pStyle {
+    font-family: "Linden Hill", serif;
+    color: globals.$color_sand;
+    text-align: center;
+    font-weight: 400;
+
+}
+
+.inputPlaceholder {
+    border: none;
+    background-color: globals.$color_darkgrey;
+    font-family:  "Limelight", sans-serif;
+    color: globals.$color_sand;
+    font-size: 2rem;
+    width: 8rem;
+  
+    
+}
+
+input::placeholder{
+    color: globals.$color_sand;
+   
+}
+
+.overskrift{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }

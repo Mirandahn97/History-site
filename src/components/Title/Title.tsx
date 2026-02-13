@@ -1,15 +1,42 @@
-import style from './Title.module.scss'
+import style from './Title.module.scss';
 
 interface TitleProps {
-    text: string 
-    Ptext: string
+  text: string;
+  inputPlaceholder: string | undefined;
+  Ptext: string;
+  setDate?: React.Dispatch<React.SetStateAction<string>>;
+  value?: string | null;
+  onEnter?: () => void;  
 }
 
-export function Title ({ text, Ptext }: TitleProps) {
-    return(
-    <> 
-    <h1 className={style.titleStyle}>{text}</h1>
-    <p className={style.pStyle}>{Ptext}</p>
+export function Title({ text, inputPlaceholder, Ptext, setDate, value, onEnter }: TitleProps) {
+
+  const testFunc = (data: string) => {
+    if (setDate) setDate(data);
+  };
+
+  return (
+    <>
+      <div className={style.overskrift}>
+        <h1 className={style.titleStyle}>{text}</h1>
+
+        {inputPlaceholder && setDate && (
+          <input
+            className={style.inputPlaceholder}
+            value={value ?? ""}
+            onChange={(e) => testFunc(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                onEnter?.(); 
+              }
+            }}
+            type="text"
+            placeholder={inputPlaceholder}
+          />
+        )}
+      </div>
+
+      <p className={style.pStyle}>{Ptext}</p>
     </>
-    )
+  );
 }

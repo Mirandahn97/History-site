@@ -2,18 +2,32 @@
 
 .Navigation {
     background-color: globals.$color_black;
+    margin-top: 10vh;
 
     ul {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        padding-left: 20vw;
+        padding-right: 20vw;
 
         li {
             list-style: none;
 
             a {
+                font-family: "Linden Hill", serif;
                 text-decoration: none;
                 color: globals.$color_sand;
+
+                &:hover {
+                    text-decoration: underline;
+                    color: globals.$color_sand;
+                }
+
+                &.active,
+                &:active {
+                    text-decoration: underline;
+                }
             }
         }
     }

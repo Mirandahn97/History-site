@@ -9,8 +9,10 @@ import { useState } from "react"
 
 
 function App() {
-    const [date, setDate] = useState<string | null>(null)
+    const [date, setDate] = useState<string>('')
+    const [year, setYear] = useState<string>('')
 
+    console.log(year);
     
 
 
@@ -19,12 +21,12 @@ function App() {
   return (
 
     <BrowserRouter>
-      <Header setDate={setDate} date={date} />
+      <Header setDate={setDate} setYear={setYear} date={date} />
       <Nav />
       <Routes>
         <Route path='/ByDate' element={<ByDate date={date} />} />
         <Route path='/Today' element={<Today />} />
-        <Route path='/Since' element={<Since />} />
+        <Route path='/Since' element={<Since year={year}/>} />
       </Routes>
     </BrowserRouter>
 

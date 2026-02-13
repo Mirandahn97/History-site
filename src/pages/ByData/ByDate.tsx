@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
-import type { EventData } from "../../components/types/eventType";
+import type { EventData } from "../../types/eventType";
 import style from "./ByDate.module.scss";
 import light from "../../assets/light.png";
 import arrow from "../../assets/arrow.png";
 import book from "../../assets/book.png";
 
 interface ByDateProps {
-  date: string | null;
+  date: string;
 }
 
 export function ByDate({ date }: ByDateProps) {

@@ -4,12 +4,14 @@ import { useLocation } from 'react-router'
 import { Title } from '../Title/Title'
 
 interface HeaderProps {
-    setDate: React.Dispatch<React.SetStateAction<any>>;
+    setDate: React.Dispatch<React.SetStateAction<string>>;
     date?: string | null;
+    setYear: React.Dispatch<React.SetStateAction<string>>;
+    year?: string | null;
     }
 
 
-export function Header({setDate, date}:HeaderProps) {
+export function Header({setDate, date, year, setYear}:HeaderProps) {
 
     let heading = `ON THIS DAY`
     let textstring = `What happend on this day - histirical events, deaths and births througout time`
@@ -19,7 +21,7 @@ export function Header({setDate, date}:HeaderProps) {
 
     if (location.pathname === `/ByDate`) {
         heading = `ON:`
-        inputPlaceholder = `22/08`
+        inputPlaceholder = `08/22`
         textstring = `What happened on this day - Here you can enter a specific date to get only events that happened on this date`
         showInput = true;
     }
@@ -28,7 +30,7 @@ export function Header({setDate, date}:HeaderProps) {
         heading = `SINCE:`
         inputPlaceholder = `1947`
         textstring = `What happened on this day - Here you can enter a specific year to get only events for that year`
-        showInput = false;
+        showInput = true;
     }
 
     return (
@@ -39,7 +41,7 @@ export function Header({setDate, date}:HeaderProps) {
                 <div className={style.circle2}></div>
                 <div className={style.circle3}></div>
                 <div className={style.circle4}></div>
-                <Title text={heading} Ptext={textstring} inputPlaceholder={inputPlaceholder} setDate={showInput ? setDate : undefined} value={showInput ? (typeof date === 'string' ? date : '') : undefined} />
+                <Title text={heading} Ptext={textstring} inputPlaceholder={inputPlaceholder} setDate={showInput ? setDate : undefined} setYear={setYear} value={showInput ? (typeof date === 'string' ? date : '') : year} />
             </div>
         </header>
     )

@@ -5,14 +5,17 @@ interface TitleProps {
   inputPlaceholder: string | undefined;
   Ptext: string;
   setDate?: React.Dispatch<React.SetStateAction<string>>;
+  setYear?: React.Dispatch<React.SetStateAction<string>>;
   value?: string | null;
   onEnter?: () => void;  
 }
 
-export function Title({ text, inputPlaceholder, Ptext, setDate, value, onEnter }: TitleProps) {
+export function Title({ text, inputPlaceholder, Ptext, setDate, setYear, value, onEnter }: TitleProps) {
 
   const testFunc = (data: string) => {
-    if (setDate) setDate(data);
+    if (setDate) setDate(data) 
+    if (setYear) setYear(data) 
+
   };
 
   return (
